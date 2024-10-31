@@ -1,0 +1,22 @@
+{
+  "name": "Aspacelife-nodeJs-Microservices",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+      "apps/customer",
+      "apps/footer",
+      "apps/header",
+      "apps/news",
+      "apps/products",
+      "apps/dashboard"
+  ],
+  "scripts": {
+      "start": "concurrently \"yarn workspace customer start\"  \"yarn workspace footer start\"  \"yarn workspace header start\" \"yarn workspace products start\" \"yarn workspace news start\"  \"yarn workspace dashboard start\" ",
+      "clean":"yarn cache clean"
+  },
+  "devDependencies": {
+      "concurrently": "^8.2.2"
+  }
+}
