@@ -57,7 +57,7 @@ app.use(uploads.any(),async function (req: Request, res: Response, next) {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
-LoginRoute (app);
+LoginRoute(app);
 server.listen(port,()=>{
 // Serve Swagger documentation
 SwaggerDoc(app,port);

@@ -17,7 +17,7 @@ let swaggerSpec: any = {
     },
     license: []
   },
-  host: "localhost:3200/v1",
+  host: `localhost:3002/v${version}`,
   basePath: "/",
   schemes: [
     "http",

@@ -1,6 +1,6 @@
 {
   "name": "abaatechsolutions",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "abaatechsolutions API ",
   "main": "src/main.ts",
   "directories": {

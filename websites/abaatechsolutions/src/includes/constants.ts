@@ -3,7 +3,7 @@ import 'dotenv/config';
 import { DBSettingsSchema, MailServerSchema, UserRoleSchema, EmailsSchema } from './types';
 console.log(process.env.NODE_ENV);
 export const development: boolean = process.env.NODE_ENV !== "production";
-const version: string | undefined = process.env.version;
+import {version} from "../../package.json"
 export const AppConstants = {
     appName: "Abaa Technology Solutions",
     baseUrl: `http://localhost:3002/v${version}/`,

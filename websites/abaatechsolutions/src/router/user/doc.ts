@@ -57,7 +57,43 @@ export const RegisterDocucment = {
         consumes: [
           "multipart/form-data"
         ],
-        parameters: []
+        parameters: [
+          {
+            name: "firstName",
+            in: "formData",
+            description: "Enter your first name",
+            required: true,
+            type: "string"
+            },
+            {
+            name: "lastName",
+            in: "formData",
+            description: "Enter your lastName",
+            required: true,
+            type: "string"
+            },
+            {
+              name: "email",
+              in: "formData",
+              description: "Enter your email address",
+              required: true,
+              type: "string"
+              },
+              {
+              name: "password",
+              in: "formData",
+              description: "Enter password password",
+              required: true,
+              type: "string"
+              },
+              {
+              name: "phoneNumber",
+              in: "formData",
+              description: "Enter your phoneNumber",
+              required: true,
+              type: "string"
+              }
+        ]
       }
     }
   }
