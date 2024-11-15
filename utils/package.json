@@ -1,0 +1,25 @@
+{
+  "name": "abaatechsolutions",
+  "version": "1.0.0",
+  "description": "abaatechsolutions API ",
+  "main": "index.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "index.ts",
+    "start": "nodemon src/index.ts",
+    "build": "esbuild main.ts --bundle --platform=node --outfile=dist/index.js --format=esm",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "Marshall Ekene",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.26",
+    "@types/nodemailer": "^6.4.14",
+    "typescript": "^5.4.2"
+  }
+}

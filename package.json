@@ -1,19 +1,14 @@
 {
-  "name": "Aspacelife-nodeJs-Microservices",
-  "version": "1.0.0",
+  "name": "aspacelife",
+  "version": "1.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "workspaces": [
-      "apps/customer",
-      "apps/footer",
-      "apps/header",
-      "apps/news",
-      "apps/products",
-      "apps/dashboard"
+      "websites/abaatechsolutions"
   ],
   "scripts": {
-      "start": "concurrently \"yarn workspace customer start\"  \"yarn workspace footer start\"  \"yarn workspace header start\" \"yarn workspace products start\" \"yarn workspace news start\"  \"yarn workspace dashboard start\" ",
+      "start": "concurrently \"yarn workspace abaatechsolutions start\"  ",
       "clean":"yarn cache clean"
   },
   "devDependencies": {
