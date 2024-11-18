@@ -1,8 +1,8 @@
-export const HeaderDocucment = {
-    "/get-header": {
+export const ProductListingDocucment = {
+    "/get-products": {
       get: {
-        summary: "get list of all header.",
-        description: "get list of all header.",
+        summary: "get list of all products.",
+        description: "get list of all products.",
         produces: [
           "application/json"
         ],
@@ -10,10 +10,12 @@ export const HeaderDocucment = {
           200: {
             description: "OK"
           },
+          schema: {
+          }
         },
-        operationId: "header",
+        operationId: "products",
         tags: [
-          "header"
+          "Products"
         ],
         consumes: [
           "multipart/form-data"
@@ -21,12 +23,12 @@ export const HeaderDocucment = {
         parameters: []
       }
     }
-  }
-  export const UpdateHeaderDocucment = {
-    "/update-header": {
+}
+export const ProductUpdateDocucment = {
+    "/update-products": {
       patch: {
-        summary: "Update header.",
-        description: "Update header.",
+        summary: "update product list .",
+        description: "pdate product list .",
         produces: [
           "application/json"
         ],
@@ -34,15 +36,17 @@ export const HeaderDocucment = {
           200: {
             description: "OK"
           },
+          schema: {
+          }
         },
-        operationId: "header",
+        operationId: "products",
         tags: [
-          "header"
+          "Products"
         ],
         consumes: [
-          "multipart/form-data"
+          "application/json"
         ],
         parameters: []
       }
     }
-  }
+}

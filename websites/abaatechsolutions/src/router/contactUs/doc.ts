@@ -1,8 +1,8 @@
-export const ProductListingDocucment = {
-    "/get-products": {
+export const ContactUsDocucment = {
+    "/get-contacts": {
       get: {
-        summary: "get list of all products.",
-        description: "get list of all products.",
+        summary: "Get contact objects.",
+        description: "Get contact objects.",
         produces: [
           "application/json"
         ],
@@ -13,9 +13,9 @@ export const ProductListingDocucment = {
           schema: {
           }
         },
-        operationId: "get-products",
+        operationId: "contact-us",
         tags: [
-          "Products"
+          "Contact Us"
         ],
         consumes: [
           "multipart/form-data"
@@ -24,11 +24,11 @@ export const ProductListingDocucment = {
       }
     }
   }
-  export const ProductUpdateDocucment = {
-    "/update-products": {
-      patch: {
-        summary: "update product list .",
-        description: "pdate product list .",
+  export const UpdateContactUsDocucment = {
+    "/submit-query": {
+      post: {
+        summary: "User submit query.",
+        description: "User submit query.",
         produces: [
           "application/json"
         ],
@@ -39,14 +39,16 @@ export const ProductListingDocucment = {
           schema: {
           }
         },
-        operationId: "update-products",
+        operationId: "contact-query",
         tags: [
-          "Products"
+           "Contact Us"
         ],
         consumes: [
           "application/json"
         ],
-        parameters: []
+        parameters: [
+
+        ]
       }
     }
   }

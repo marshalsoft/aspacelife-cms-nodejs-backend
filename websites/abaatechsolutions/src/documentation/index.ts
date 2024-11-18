@@ -2,10 +2,18 @@ import swaggerJSDoc from "swagger-jsdoc";
 import { Express, Request, Response } from "express";
 import { version } from "../../package.json";
 import swaggerUI from "swagger-ui-express";
-import {LoginDocucment,RegisterDocucment} from "../router/user/doc";
-import ProductsDocucment from "../router/products/doc";
-import NewsLetterDocucment from "../router/newsletter/doc";
-import HeaderDocucment from "../router/header/doc";
+import {LoginDocucment,RegisterDocucment,UpdateUsersDocucment,ForgotPasswordDocucment,ForgotPasswordVerifyTokenDocucment, ChangePasswordDocucment, GetAllUsersDocucment} from "../router/user/doc";
+import {ProductListingDocucment,ProductUpdateDocucment} from "../router/products/doc";
+import {NewsLetterDocucment, NewsLetterSubscribeDocucment,
+  NewsLetterUnSubscribeDocucment} from "../router/newsletter/doc";
+import {HeaderDocucment,UpdateHeaderDocucment} from "../router/header/doc";
+import { BodyDocucment, UpdateBodyDocucment } from "../router/body/doc";
+import { ContactUsDocucment, UpdateContactUsDocucment } from "../router/contactUs/doc";
+import { CarreerDocucment, SubmitCarrerDocucment } from "../router/carreer/doc";
+import { BlogDocucment, PostBlogDocucment } from "../router/blog/doc";
+import { BoardDocucment, CreatNewBoardMemberDocucment, UpdateBoardMemberDocucment } from "../router/board/doc";
+import { AboutUsDocucment, UpdateAboutUsDocucment } from "../router/about-us/doc";
+import { MissionDocucment, UpdateMissionDocucment, UpdateVisonDocucment, VisionDocucment } from "../router/vision_mission/doc";
 let swaggerSpec: any = {
   swagger: "2.0",
   info: {
@@ -53,10 +61,38 @@ let swaggerSpec: any = {
 const SwaggerDoc = (app: Express, port: number) => {
   app.use(`/v${version}/docs`, swaggerUI.serve, swaggerUI.setup(Object.assign(swaggerSpec,{"paths":Object.assign(
     LoginDocucment,
-    ProductsDocucment,
+    GetAllUsersDocucment,
+    UpdateUsersDocucment,
+    ProductListingDocucment,
+    ProductUpdateDocucment,
     NewsLetterDocucment,
     HeaderDocucment,
-    RegisterDocucment
+    RegisterDocucment,
+    NewsLetterDocucment,
+    NewsLetterSubscribeDocucment,
+    NewsLetterUnSubscribeDocucment,
+    ForgotPasswordDocucment,
+    ForgotPasswordVerifyTokenDocucment,
+    ChangePasswordDocucment,
+    HeaderDocucment,
+    UpdateHeaderDocucment,
+    BodyDocucment,
+    UpdateBodyDocucment,
+    ContactUsDocucment,
+    UpdateContactUsDocucment,
+    CarreerDocucment,
+    SubmitCarrerDocucment,
+    BlogDocucment,
+    PostBlogDocucment,
+    BoardDocucment,
+    UpdateBoardMemberDocucment,
+    CreatNewBoardMemberDocucment,
+    AboutUsDocucment,
+    UpdateAboutUsDocucment,
+    VisionDocucment,
+    UpdateVisonDocucment,
+    MissionDocucment,
+    UpdateMissionDocucment
   )})));
   app.get(`/v${version}/docs-json`, (req: Request, res: Response) => {
     res.setHeader('Content-Type', 'application/json');
