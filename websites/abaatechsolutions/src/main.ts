@@ -12,7 +12,8 @@ import Moment from "moment";
 import dotenv from 'dotenv';
 import LoginRoute from "./router/user/login";
 import { AppConstants } from "./includes/constants";
-import SwaggerDoc from "./documentation";
+import SwaggerDoc from "./documentation/abaatechsolutions";
+import SwaggerDashboardDoc from "./documentation/dashboard";
 
 dotenv.config();
 var storage = multer.diskStorage({
@@ -61,6 +62,7 @@ LoginRoute(app);
 server.listen(port,()=>{
 // Serve Swagger documentation
 SwaggerDoc(app,port);
+SwaggerDashboardDoc(app,port);
 });
 
 
