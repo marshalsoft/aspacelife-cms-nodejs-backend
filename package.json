@@ -5,10 +5,11 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-      "websites/abaatechsolutions"
+      "apps/server/abaatechsolutions",
+      "apps/dashboard"
   ],
   "scripts": {
-      "start": "concurrently \"yarn workspace abaatechsolutions start\"  ",
+      "start": "concurrently \"yarn workspace abaatechsolutions start\" \"yarn workspace dashboard dev\" ",
       "clean":"yarn cache clean"
   },
   "devDependencies": {
