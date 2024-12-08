@@ -3,7 +3,7 @@ import Head from "next/head";
 import favicon from '../../../public/assets/images/brand-logos/favicon.ico';
 
 const Seo = ({ title }:any) => {
-  let pageTitle = `Opam Protect - ${title}`
+  let pageTitle = `AbaaTech Solution - ${title}`
 
   return (
     <Head>

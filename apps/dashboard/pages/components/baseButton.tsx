@@ -11,7 +11,7 @@ export const BaseButton = (prop:BaseButtonProp)=>{
     return <button 
     type={prop.type}
     onClick={prop.onClick} 
-    className="ti-btn ti-btn-primary !bg-primary !text-white !font-medium">
+    className="ti-btn base-btn !text-white !font-medium">
       {prop.loading && <BaseLoader />} 
       {prop.title}
     </button>

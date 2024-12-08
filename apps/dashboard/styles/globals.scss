@@ -72,4 +72,28 @@ background-color: rgba(0,0,0,0.5);
 .ti-modal .ti-modal-box{
   opacity: 1 !important;
 }
-
+.nav ul li:hover{
+  background-color: #7001F9;
+  border-radius: 5px;
+  color: white;
+}
+.main-menu{
+  padding: 10px;
+}
+.title-text{
+  font-size: 25px;
+  font-weight: 600;
+  color: #484848;
+}
+.sub-title-text{
+  font-size: 14px;
+  font-weight: 500;
+  color: #484848;
+}
+.base-btn{
+background-color: #7001F9;
+}
+.position-bottom{
+  position: absolute;
+  bottom: 200px;
+}

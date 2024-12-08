@@ -17,9 +17,9 @@ import { MissionDocucment, UpdateMissionDocucment, UpdateVisonDocucment, VisionD
 let swaggerSpec: any = {
   swagger: "2.0",
   info: {
-    title: "AbaaTech Dashboard API Docs",
+    title: "Aspacelife Dashboard API Docs",
     version,
-    description: "This is api of AbaaTech, you can use the api key `bearer` to authenticate your access via the header.",
+    description: "This is api of Aspacelife Dashboard, you can use the api key `bearer` to authenticate your access via the header.",
     contact: {
       email: "marshallekene@hotmail.com"
     },

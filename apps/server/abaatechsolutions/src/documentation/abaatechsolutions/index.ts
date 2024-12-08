@@ -17,7 +17,7 @@ import { MissionDocucment, UpdateMissionDocucment, UpdateVisonDocucment, VisionD
 let swaggerSpec: any = {
   swagger: "2.0",
   info: {
-    title: "AbaaTech Website API Docs",
+    title: "AbaaTech solutions Website API Docs",
     version,
     description: "This is api of AbaaTech, you can use the api key `bearer` to authenticate your access via the header.",
     contact: {
@@ -78,7 +78,7 @@ const SwaggerDoc = (app: Express, port: number) => {
     VisionDocucment,
     MissionDocucment
   )})));
-  app.get(`/v${version}/docs-json`, (req: Request, res: Response) => {
+  app.get(`/v${version}/abaatechsolutions/docs-json`, (req: Request, res: Response) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(swaggerSpec);
   });

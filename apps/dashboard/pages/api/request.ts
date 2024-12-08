@@ -24,7 +24,7 @@ export function PostRequest(
     return new Promise<APIResponse>((resolve, _reject) => {
           const token:string | null = localStorage.getItem(LOCALSTORAGE.authToken);
             if (String(token) !== 'null') {
-              headers.append('Authorization', `Bearer ${JSON.parse(String(token)).access_token}`);
+              headers.append('Authorization', `Bearer ${token}`);
             }
             if (requestType !== 'json'){
                 headers.append('Content-Type', 'multipart/form-data');
@@ -88,7 +88,7 @@ export function PostRequest(
       return new Promise<APIResponse>((resolve, _reject) => {
         const token:string | null = localStorage.getItem(LOCALSTORAGE.authToken);
             if (String(token) !== 'null') {
-              headers.append('Authorization', `Bearer ${JSON.parse(String(token)).access_token}`);
+              headers.append('Authorization', `Bearer ${token}`);
             }
             headers.append('Content-Type', 'multipart/form-data');
             headers.append('accept','*/*');

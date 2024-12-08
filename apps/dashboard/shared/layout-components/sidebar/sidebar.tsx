@@ -46,15 +46,15 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 	function Onhover() {
 		const theme = store.getState();
 		if ((theme.dataToggled == 'icon-overlay-close' || theme.dataToggled == 'detached-close') && theme.iconOverlay != 'open') {
-		  ThemeChanger({ ...theme, "iconOverlay": "open" });
+			ThemeChanger({ ...theme, "iconOverlay": "open" });
 		}
-	  }
-	  function Outhover() {
+	}
+	function Outhover() {
 		const theme = store.getState();
 		if ((theme.dataToggled == 'icon-overlay-close' || theme.dataToggled == 'detached-close') && theme.iconOverlay == 'open') {
-		  ThemeChanger({ ...theme, "iconOverlay": "" });
+			ThemeChanger({ ...theme, "iconOverlay": "" });
 		}
-	  }
+	}
 
 	function menuClose() {
 		const theme = store.getState();
@@ -73,36 +73,36 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 	const WindowPreSize = typeof window !== 'undefined' ? [window.innerWidth] : [];
 
 	function menuResizeFn() {
-	  if (typeof window === 'undefined') {
-	// Handle the case where window is not available (server-side rendering)
-	return;
-	  }
-	
-	  WindowPreSize.push(window.innerWidth);
-	  if (WindowPreSize.length > 2) { WindowPreSize.shift() }
-	
-	  const theme = store.getState();
-	  const currentWidth = WindowPreSize[WindowPreSize.length - 1];
-	  const prevWidth = WindowPreSize[WindowPreSize.length - 2];
-	
-	  console.log('Current Width:', currentWidth);
-	  console.log('Previous Width:', prevWidth);
-	  console.log('Current dataVerticalStyle:', theme.dataVerticalStyle);
-	
-	  if (WindowPreSize.length > 1) {
-	if (currentWidth < 992 && prevWidth >= 992) {
-	  // less than 992;
-	  console.log('Width is less than 992');
-	  ThemeChanger({ ...theme, dataToggled: "close" });
-	}
-	
-	if (currentWidth >= 992 && prevWidth < 992) {
-	  // greater than 992
-	  console.log('Width is greater than or equal to 992');
-	  console.log('Current dataVerticalStyle:', theme.dataVerticalStyle);
-	  ThemeChanger({ ...theme, dataToggled: theme.dataVerticalStyle === "doublemenu" ? "double-menu-open" : "" });
-	}
-	  }
+		if (typeof window === 'undefined') {
+			// Handle the case where window is not available (server-side rendering)
+			return;
+		}
+
+		WindowPreSize.push(window.innerWidth);
+		if (WindowPreSize.length > 2) { WindowPreSize.shift() }
+
+		const theme = store.getState();
+		const currentWidth = WindowPreSize[WindowPreSize.length - 1];
+		const prevWidth = WindowPreSize[WindowPreSize.length - 2];
+
+		console.log('Current Width:', currentWidth);
+		console.log('Previous Width:', prevWidth);
+		console.log('Current dataVerticalStyle:', theme.dataVerticalStyle);
+
+		if (WindowPreSize.length > 1) {
+			if (currentWidth < 992 && prevWidth >= 992) {
+				// less than 992;
+				console.log('Width is less than 992');
+				ThemeChanger({ ...theme, dataToggled: "close" });
+			}
+
+			if (currentWidth >= 992 && prevWidth < 992) {
+				// greater than 992
+				console.log('Width is greater than or equal to 992');
+				console.log('Current dataVerticalStyle:', theme.dataVerticalStyle);
+				ThemeChanger({ ...theme, dataToggled: theme.dataVerticalStyle === "doublemenu" ? "double-menu-open" : "" });
+			}
+		}
 	}
 
 	function switcherArrowFn(): void {
@@ -412,12 +412,12 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 		let element = event.target;
 
 		// if ((window.screen.availWidth <= 992 || theme.dataNavStyle != "icon-hover") && (window.screen.availWidth <= 992 || theme.dataNavStyle != "menu-hover")) {
-			if (
-				(theme.dataNavStyle !== "icon-hover" && theme.dataNavStyle !== "menu-hover") ||
-				window.innerWidth < 992 ||
-				(theme.dataNavLayout !== "horizontal" &&
-				  (theme.dataToggled !== "icon-hover-closed" && theme.dataToggled !== "menu-hover-closed"))
-			  ) {
+		if (
+			(theme.dataNavStyle !== "icon-hover" && theme.dataNavStyle !== "menu-hover") ||
+			window.innerWidth < 992 ||
+			(theme.dataNavLayout !== "horizontal" &&
+				(theme.dataToggled !== "icon-hover-closed" && theme.dataToggled !== "menu-hover-closed"))
+		) {
 			for (const item of MenuItems) {
 				if (item === targetObject) {
 					if (theme.dataVerticalStyle == 'doublemenu' && item.active) { return; }
@@ -555,53 +555,60 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 			}
 		}
 	}
-	return (
-
-		<Fragment>
-			<div id="responsive-overlay"
-				onClick={() => { menuClose(); }}> </div>
-			<aside className="app-sidebar sticky bg-green" id="sidebar" onMouseOver={() => Onhover()}
-				onMouseLeave={() => Outhover()}>
-				<div className="main-sidebar-header" style={{overflow:"hidden"}}>
-					<Link href="/dashboard" className="header-logo" >
-					{Logo()}
-					</Link>
+	return (<Fragment>
+		<div id="responsive-overlay"
+			onClick={() => { 
+				menuClose(); 
+				}}> 
 				</div>
+		<aside className="app-sidebar sticky" 
+		style={{backgroundColor:"white"}}
+		 id="sidebar"
+			onMouseOver={() => Onhover()}
+			onMouseLeave={() => Outhover()}>
+			<div className="main-sidebar-header" style={{ overflow: "hidden" }}>
+				<Link href="/dashboard" className="header-logo" >
+					ADMIN
+				</Link>
+			</div>
 
-				<div className="main-sidebar " id="sidebar-scroll">
-					<SimpleBar >
-						<nav className="main-menu-container nav nav-pills flex-column sub-open">
-							<div className="slide-left" id="slide-left" onClick={() => { slideLeft(); }}><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24"
-								height="24" viewBox="0 0 24 24">
-								<path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
-							</svg></div>
+			<div className="main-sidebar " id="sidebar-scroll">
+				<SimpleBar >
+					<nav className="main-menu-container nav nav-pills flex-column sub-open">
+						<div className="slide-left" id="slide-left" onClick={() => { slideLeft(); }}><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24"
+							height="24" viewBox="0 0 24 24">
+							<path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+						</svg></div>
 
-							<ul className="main-menu" onClick={() => Sideclick()}>
+						<ul className="main-menu" onClick={() => Sideclick()}>
 							{MenuItems.map((levelone: any) => (
-								<Fragment key={Math.random()}>
-									<li className={`${levelone.menutitle ? 'slide__category' : ''} ${levelone.type === 'link' ? 'slide' : ''}
-                       ${levelone.type === 'sub' ? 'slide has-sub' : ''} ${levelone?.active ? 'open' : ''} ${levelone?.selected ? 'active' : ''}`}>
+						<Fragment 
+						key={Math.random()}>
+						<li 
+						className={`${levelone.menutitle ? 'slide__category' : ''} ${levelone.type === 'link' ? 'slide' : ''}
+                       ${levelone.type === 'sub' ? 'slide has-sub' : ''} ${levelone?.active ? 'open' : ''} ${levelone?.selected ? 'active' : ''}`}
+					   >
 										{levelone.menutitle ?
-											<span className='category-name'>
+											<span className='category-name' >
 												{levelone.menutitle}
 											</span>
 											: ""}
 										{levelone.type === "link" ?
 											<Link href={levelone.path + "/"} className={`side-menu__item ${levelone.selected ? 'active' : ''}`} >{levelone.icon}
 												<span className="side-menu__label">{levelone.title} {levelone.badgetxt ? (<span className={levelone.class}> {levelone.badgetxt}</span>
-													) : (
-														""
-													)}
+												) : (
+													""
+												)}
 												</span>
 											</Link>
 											: ""}
 										{levelone.type === "empty" ?
-											<Link href="#" className='side-menu__item'>{levelone.icon}<span className=""> {levelone.title} {levelone.badgetxt ? (
-														<span className={levelone.class}>{levelone.badgetxt} </span>
-													) : (
-														""
-													)}
-												</span>
+											<Link href="#" className='side-menu__item'>{levelone.icon}<span className="" style={{color:"black",paddingLeft:10}}> {levelone.title} {levelone.badgetxt ? (
+												<span className={levelone.class}>{levelone.badgetxt} </span>
+											) : (
+												""
+											)}
+											</span>
 											</Link>
 											: ""}
 										{levelone.type === "sub" ?
@@ -612,14 +619,14 @@ const Sidebar = ({ local_varaiable, ThemeChanger }: any) => {
 							))}
 						</ul>
 
-							<div className="slide-right" onClick={() => { slideRight(); }} id="slide-right">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
-							</div>
-						</nav>
-					</SimpleBar>
-				</div>
-			</aside>
-		</Fragment>
+						<div className="slide-right" onClick={() => { slideRight(); }} id="slide-right">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+						</div>
+					</nav>
+				</SimpleBar>
+			</div>
+		</aside>
+	</Fragment>
 	);
 };
 

@@ -62,8 +62,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 DashboardRouter(app);
 AbaaTechSolutionsRouter(app);
-SwaggerAbaaTechSolutionDoc(app,port);
 SwaggerDashboardDoc(app,port);
+SwaggerAbaaTechSolutionDoc(app,port);
 server.listen(port,()=>{
 });
 
