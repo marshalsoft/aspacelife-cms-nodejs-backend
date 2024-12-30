@@ -7,11 +7,9 @@ import bodyParser  from "body-parser";
 import cookieParser from "cookie-parser";
 import cookieSession from "cookie-session";
 import multer from "multer";
-import { generateKeyPairSync, randomUUID } from "crypto";
+import {randomUUID } from "crypto";
 import Moment from "moment";
 import dotenv from 'dotenv';
-import LoginRoute from "./router/user/login";
-import { AppConstants } from "./includes/constants";
 import SwaggerAbaaTechSolutionDoc from "./documentation/abaatechsolutions";
 import SwaggerDashboardDoc from "./documentation/dashboard";
 import { DashboardRouter } from "./router/main/dashboard";
@@ -35,7 +33,6 @@ var uploads = multer({
 const app: Express = express();
 const port = 3002;
 const server = http.createServer(app);
-let DocumentOptions:any = {};
 app.use(cors());
 app.disable('x-powered-by');
 app.use(cookieSession({

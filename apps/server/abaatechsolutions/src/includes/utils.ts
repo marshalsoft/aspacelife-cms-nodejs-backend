@@ -4,6 +4,8 @@ import mysql from 'mysql';
 import moment from "moment";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { APIResponse } from "./helperFunction";
+import { APIResponseSchema } from "./types";
 export interface ResultProps {
   status:boolean;
   message:string;
@@ -215,6 +217,23 @@ export const HashPassword = async (password: string): Promise<string> => {
 export const ComparePassword = async (password: string, hash: string): Promise<boolean> => {
   return bcrypt.compare(password, hash);
 };
-export const generateToken = (data:any): string => {
-  return jwt.sign(data, SECRET_KEY!, { expiresIn: '1h' });
+export const generateToken = (data:any,duration:number = 1): string | null => {
+  try {
+    return jwt.sign(data, SECRET_KEY!, { expiresIn: `${duration}h` });
+  } catch (error) {
+   return null
+  }
 };
+
+export const VerifyJWT = (token:string)=>{
+  return new Promise<APIResponseSchema>((resolve)=>{
+  jwt.verify(token, SECRET_KEY!, function(err, decoded) {
+    if(err)
+    {
+      resolve(APIResponse(false,"Invalid access token",null));
+    }else{
+      resolve(APIResponse(true,"Token verified,",decoded));
+    }
+  });
+})
+}

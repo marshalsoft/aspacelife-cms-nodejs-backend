@@ -38,7 +38,6 @@ DBInstance(st,[payload.email]).then((res) => {
       createdAt:user.userCreatedAt,
       lastLogin:moment().toISOString()
     })
-    console.log(accessToken);
       // SendEmail({
       //       to:String(payload.email),
       //       subject:`Thank You for Contacting Us!`,
@@ -82,7 +81,6 @@ const VerifyUserFunction = (payload:LoginProp)=>{
           createdAt:user.userCreatedAt,
           lastLogin:moment().toISOString()
         })
-        console.log(accessToken);
           // SendEmail({
           //       to:String(payload.email),
           //       subject:`Thank You for Contacting Us!`,

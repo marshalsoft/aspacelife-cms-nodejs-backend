@@ -1,7 +1,6 @@
 
 import 'dotenv/config';
 import { DBSettingsSchema, MailServerSchema, UserRoleSchema, EmailsSchema } from './types';
-console.log(process.env.NODE_ENV);
 export const development: boolean = process.env.NODE_ENV !== "production";
 import {version} from "../../package.json"
 export const AppConstants = {
@@ -11,6 +10,8 @@ export const AppConstants = {
     phoneNumberSize: 11,
     routes: {
         login: `/v${version}/login`,
+        loginWithOTP: `/v${version}/login-with-otp`,
+        verifyOTP: `/v${version}/verify-otp`,
         register: `/v${version}/register`,
         contact_us: `/v${version}/contact-us`,
         setup: `/v${version}/setup`,
@@ -85,5 +86,5 @@ export const ProtectedRoutes: string[] = [
     GetUrl(AppConstants.routes.get_users),
     GetUrl(AppConstants.routes.get_enquiries)
 ];
-export const SECRET_KEY = "";
+export const SECRET_KEY = process.env.SECRET_KEY;
 

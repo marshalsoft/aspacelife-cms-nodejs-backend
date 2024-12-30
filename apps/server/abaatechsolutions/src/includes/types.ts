@@ -41,7 +41,12 @@ export interface APIResponseSchema {
     data?: any;
     code?: "SUCCESS" | "CHANGE_DEVICE" | "FAILED" | "INACTIVE" | "INVALID_ACCESS_TOKEN";
 }
-
+export interface EmailProps {
+subject:string;
+message:string;
+to:string;
+attachment?:boolean;
+}
 export interface DBSettingsSchema {
     user?: string;
     password?: string;
@@ -214,6 +219,10 @@ export interface SubscriptionSchema {
 export interface LoginProp {
     email:string;
     password:string;
+}
+export interface LoginWithOTPProp {
+    email:string;
+    otp:string;
 }
 
 
