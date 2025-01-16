@@ -1,7 +1,8 @@
 import { EmailProps } from "../includes/types";
 
-export class Email {
-    SendEmail = (props:EmailProps)=>{
+export const SendEmail = (props:EmailProps)=>{
+    const template = ()=>{
 
     }
+    
 }

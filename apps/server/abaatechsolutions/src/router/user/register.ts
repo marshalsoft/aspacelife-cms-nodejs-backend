@@ -28,10 +28,9 @@ const SignUpFunction = (payload:SignUpProp)=>{
   {
     if(res.data.find((a,i)=>parseInt(String(payload.phoneNumber)) == parseInt(String(a.userMobile))))
     {
-    resolve({status:false,message:"Phone number already registered.",data:payload.phoneNumber})
-    return;
+    return resolve({status:false,message:"Phone number already registered.",data:payload.phoneNumber})
     }
-  resolve({status:false,message:"Email already registered.",data:payload.email})
+    return resolve({status:false,message:"Email already registered.",data:payload.email})
   }else{
   
   resolve(res);

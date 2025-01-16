@@ -1,3 +1,4 @@
+
 export const LoginDocucment = {
     "/login": {
       post: {
@@ -272,6 +273,45 @@ export const ChangePasswordDocucment = {
             name: "newPassword",
             in: "formData",
             description: "Enter your new password",
+            required: true,
+            type: "string"
+            }
+          ]
+      }
+    }
+  }
+export const VerifyOTPDocucment = {
+    "/verify-otp": {
+      post: {
+        summary: "verify otp endpoint.",
+        description: "verify otp endpoint.",
+        produces: [
+          "application/json"
+        ],
+        responses: {
+          200: {
+            description: "OK"
+          }
+        },
+        operationId: "verify-otp",
+        tags: [
+          "User"
+        ],
+        consumes: [
+          "application/json"
+        ],
+        parameters: [
+          {
+          otp: "otp",
+          in: "formData",
+          description: "Enter otp",
+          required: true,
+          type: "string"
+          },
+          {
+            email: "email",
+            in: "formData",
+            description: "Enter your email",
             required: true,
             type: "string"
             }

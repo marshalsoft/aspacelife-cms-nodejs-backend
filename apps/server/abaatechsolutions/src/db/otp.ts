@@ -12,10 +12,7 @@ DBInstance(st,[email]).then((result)=>{
         var st = `INSERT INTO appToken (tkToken,tkUserEmail) VALUES(?,?)`;
         DBInstance(st,[otp,email]);
     }
-    // send email
-    
 });
-
 }
 export default SaveOTP;
 

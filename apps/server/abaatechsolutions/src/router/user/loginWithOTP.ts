@@ -8,7 +8,7 @@ import { AppConstants } from "../../includes/constants";
 import SaveOTP from "../../db/otp";
 import { sha512 } from "js-sha512";
 import { RequestResponse } from "../../includes/helperFunction";
-import { Email } from "../../email";
+import { SendEmail } from "../../email";
 
 const LoginWithOTPRoute = (app:Express)=>{
     app.post(AppConstants.routes.loginWithOTP,(request:Request,response:Response)=>{
@@ -51,7 +51,7 @@ DBInstance(st,[payload.email,pwd]).then((res) => {
      const otp = GenerateOTP(6);
      SaveOTP(otp,payload.email);
      // send email
-     new Email().SendEmail({
+     SendEmail({
       subject:"Verification OTP",
       message:`This is your verification OTP : ${otp}, use this to login to your dashboard`,
       to:payload.email
