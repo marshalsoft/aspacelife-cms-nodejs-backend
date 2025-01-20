@@ -14,7 +14,7 @@ DashboardBulkMessages:"/dashboard/bulk-messages",
 DashboardJobs:"/dashboard/jobs",
 DashboardEmailTemplate:"/dashboard/email-templates",
 DashboardUnsubscribed:"/dashboard/unsubscribe",
-DashboardEmailBlacklist:"/dashboard/emal-blacklist",
+DashboardEmailBlacklist:"/dashboard/email-blacklist",
 DashboardEmailUsers:"/dashboard/email-users",
 DashboardLogout:"/dashboard/logout"
 }

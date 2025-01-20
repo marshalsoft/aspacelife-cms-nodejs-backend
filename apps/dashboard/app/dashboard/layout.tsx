@@ -8,7 +8,7 @@ const Layout = ({
     children: React.ReactNode;
   }>) => {
   return (
-    <div >
+    <div className="h-full w-full bg-white">
         <Navbar 
         navList={[
             {title:"ABAALY",route:ROUTES.Abaaly,},
@@ -17,11 +17,11 @@ const Layout = ({
             {title:"ABAARIDE",route:ROUTES.AbaaRide},
         ]}
         />
-    <div className="flex h-full">
+    <div className="flex h-full fixed bg-white">
       {/* Sidebar */}
       <Sidebar />
       {/* Main Content */}
-      <div className="flex-grow p-8 bg-gray-100">
+      <div className="flex-grow p-8 bg-gray-100 lg:px-[130px] overflow-scroll w-[95vw] pt-[100px]">
         {children}
       </div>
     </div>

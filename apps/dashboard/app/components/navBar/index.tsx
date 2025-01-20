@@ -5,8 +5,7 @@ import { NavbarProps } from '@/app/utils/types';
 import AvatarIcon from '@/app/assets/icons/avatarIcon';
 
 const Navbar = (props:NavbarProps) => {
-  return (
-    <nav className="bg-white text-black p-3">
+  return (<nav className="bg-white text-black p-3 drop-shadow-md fixed top-0 left-0 right-0 z-20">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-semibold">
           <BaseNavLink 

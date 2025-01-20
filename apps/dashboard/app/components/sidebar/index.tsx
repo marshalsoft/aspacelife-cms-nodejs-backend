@@ -32,9 +32,9 @@ const Sidebar = () => {
         {title:"Log Out",route:ROUTES.DashboardLogout,icon:<LogOutIcon />}
     ])
   return (
-    <div className="flex flex-col min-w-14 max-w-52 bg-white text-black">
+    <div className="flex flex-col min-w-14 max-w-52 bg-white text-black ">
       <nav className="flex-grow">
-        <ul className="space-y-4 p-4">
+        <ul className="space-y-4 p-4 pt-20">
           <li>
           <button
           className='px-2 hover:cursor-pointer'
